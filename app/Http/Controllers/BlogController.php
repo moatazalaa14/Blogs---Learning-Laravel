@@ -65,4 +65,27 @@ class BlogController extends Controller
        return redirect()->route('blogs.index');
     
     }
+
+
+    public function edit($post){
+        $post=Post::find($post);
+        $users=User::all();
+        return view('blogs.edit',[
+            'post' => $post,
+            'users'=>$users
+        ]) ;
+
+    }
+
+    public function update($post ,Request $myRequestObject ){
+        $data=$myRequestObject->all();
+       
+        Post::find($post)->update([
+            'title' =>$data['title'],
+            'description' => $data['description'],
+            'user_id' => $data['user_id']
+        ]);
+
+        return redirect()->route('blogs.index');
+    }
 }

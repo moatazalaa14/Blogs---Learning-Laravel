@@ -26,7 +26,7 @@
       <td>{{$post['created_at']}}</td>
       <td>
         <a class="btn btn-primary" href="/blogs/{{$post['id']}}">View</a>
-        <a class="btn btn-info" >Edit</a>
+        <a class="btn btn-info" href='{{route("blogs.edit",$post['id'])}}'>Edit</a>
         <a class="btn btn-danger" href='/showerrormsg/{{$post['id']}}'>Delete</a>
         <!--
         1-confirmation msg 

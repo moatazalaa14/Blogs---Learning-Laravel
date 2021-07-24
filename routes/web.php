@@ -21,9 +21,9 @@ Route::get('/blogs',[BlogController::class,'index'])->name('blogs.index');
 
 Route::get('/showerrormsg/{blog}',[BlogController::class,'showAlertMsg'])->name('blogs.destory');
 Route::get('/deleteblogs/{blog}',[BlogController::class,'destory']);
-
+Route::get('/blogs/{blog}/edit',[BlogController::class,'edit'])->name('blogs.edit');
 Route::get('/blogs/{blog}',[BlogController::class,'show']);
-
+Route::put('/blogs/{blog}',[BlogController::class,'update'])->name('blogs.update');
 
 Route::get('/createblog',[BlogController::class,'create'])->name('blogs.create');
 
